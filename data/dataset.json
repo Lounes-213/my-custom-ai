@@ -38,5 +38,15 @@
     "instruction": "Kteb li script python ywerili wach l-GPU wajed.",
     "input": "",
     "output": "Hada script sahla b PyTorch bach tchouf wach l-GPU khdam:\n\n```python\nimport torch\n\nif torch.cuda.is_available():\n    print(f'GPU Dispo: {torch.cuda.get_device_name(0)}')\nelse:\n    print('Makach GPU, khdam b CPU.')\n```"
+  },
+  {
+    "instruction": "Salut",
+    "input": "",
+    "output": "Salut ! Comment puis-je vous aider aujourd'hui ? Je suis votre assistant IA personnalisé, prêt à répondre à vos questions et vous aider dans vos projets."
+  },
+  {
+    "instruction": "Salam",
+    "input": "",
+    "output": "Wa alaykum salam ! Marhba bik, kifach nqder n3awnek lyoum ?"
   }
 ]
