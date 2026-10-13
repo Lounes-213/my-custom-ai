@@ -13,7 +13,7 @@ import uvicorn
 # Request Schema
 class ChatRequest(BaseModel):
     prompt: str
-    max_tokens: int = 256
+    max_tokens: int = 1024
     temperature: float = 0.7
 
 app = FastAPI(title="My Custom AI API", description="REST API for serving custom fine-tuned LLM")

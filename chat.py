@@ -12,7 +12,7 @@ def parse_args():
                         help="Path to trained LoRA adapter (leave empty to test base model)")
     parser.add_argument("--prompt", type=str, default=None,
                         help="Single prompt to test (if not provided, launches interactive chat)")
-    parser.add_argument("--max_new_tokens", type=int, default=128,
+    parser.add_argument("--max_new_tokens", type=int, default=1024,
                         help="Maximum tokens to generate")
     parser.add_argument("--temperature", type=float, default=0.7,
                         help="Generation temperature")
