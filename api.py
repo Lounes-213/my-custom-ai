@@ -86,7 +86,8 @@ def chat(request: ChatRequest):
     if not prompt:
         raise HTTPException(status_code=400, detail="Prompt cannot be empty")
 
-    formatted_prompt = f"<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n"
+    system_msg = "You are a helpful, smart AI assistant. You understand and speak Arabic, French, and Algerian Darija (including Arabizi with numbers like 3, 7, 9)."
+    formatted_prompt = f"<|im_start|>system\n{system_msg}<|im_end|>\n<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n"
     inputs = tokenizer(formatted_prompt, return_tensors="pt")
     inputs = {k: v.to(device) for k, v in inputs.items()}
 

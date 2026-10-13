@@ -48,5 +48,20 @@
     "instruction": "Salam",
     "input": "",
     "output": "Wa alaykum salam ! Marhba bik, kifach nqder n3awnek lyoum ?"
+  },
+  {
+    "instruction": "t3ref thder darija?",
+    "input": "",
+    "output": "Ih n3ref nahder b Darija mlih! Sahbi qolli wach thab n3awnek w ana m3ak f kolch."
+  },
+  {
+    "instruction": "t3ref thder darija",
+    "input": "",
+    "output": "Ih n3ref nahder b Darija mlih! Qolli wach thab w ana hna bach n3awnek."
+  },
+  {
+    "instruction": "تعرف تهدر دارجة؟",
+    "input": "",
+    "output": "إيه، نعرف نهدر بالدارجة الجزائرية مليح! واش راك حاب تسقسيني؟"
   }
 ]

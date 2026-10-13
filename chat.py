@@ -19,7 +19,8 @@ def parse_args():
     return parser.parse_args()
 
 def generate_response(model, tokenizer, prompt, max_new_tokens, temperature):
-    formatted_prompt = f"<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n"
+    system_msg = "You are a helpful, smart AI assistant. You understand and speak Arabic, French, and Algerian Darija (including Arabizi with numbers like 3, 7, 9)."
+    formatted_prompt = f"<|im_start|>system\n{system_msg}<|im_end|>\n<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n"
     inputs = tokenizer(formatted_prompt, return_tensors="pt")
     
     device = "cuda" if torch.cuda.is_available() else "cpu"

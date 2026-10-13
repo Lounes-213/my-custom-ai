@@ -44,7 +44,8 @@ def prepare_tokenized_dataset(data_path, tokenizer, max_seq_length=512):
         output = item.get("output", "").strip()
         
         user_message = f"{instruction}\n{extra_input}".strip() if extra_input else instruction
-        text = f"<|im_start|>user\n{user_message}<|im_end|>\n<|im_start|>assistant\n{output}<|im_end|>"
+        system_msg = "You are a helpful, smart AI assistant. You understand and speak Arabic, French, and Algerian Darija (including Arabizi with numbers like 3, 7, 9)."
+        text = f"<|im_start|>system\n{system_msg}<|im_end|>\n<|im_start|>user\n{user_message}<|im_end|>\n<|im_start|>assistant\n{output}<|im_end|>"
         formatted_texts.append(text)
         
     raw_dataset = Dataset.from_dict({"text": formatted_texts})
