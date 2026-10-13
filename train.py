@@ -15,8 +15,8 @@ from trl import SFTTrainer
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Fine-tune an LLM on custom dataset using QLoRA")
-    parser.add_argument("--model_id", type=str, default="Qwen/Qwen2.5-1.5B-Instruct",
-                        help="Hugging Face model ID (default: Qwen/Qwen2.5-1.5B-Instruct)")
+    parser.add_argument("--model_id", type=str, default="Qwen/Qwen2.5-7B-Instruct",
+                        help="Hugging Face model ID (default: Qwen/Qwen2.5-7B-Instruct)")
     parser.add_argument("--data_path", type=str, default="data/dataset.json",
                         help="Path to JSON dataset file")
     parser.add_argument("--output_dir", type=str, default="output/my_custom_model",
@@ -114,6 +114,7 @@ def main():
         num_train_epochs=args.epochs,
         per_device_train_batch_size=args.batch_size,
         gradient_accumulation_steps=2,
+        gradient_checkpointing=True if device == "cuda" else False,
         learning_rate=args.learning_rate,
         fp16=(device == "cuda"),
         logging_steps=1,
