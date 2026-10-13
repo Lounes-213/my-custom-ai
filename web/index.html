@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مساعدي الذكي الخاص | Custom AI</title>
+    <!-- Google Fonts: Outfit & Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar / Header -->
+        <header class="app-header">
+            <div class="brand">
+                <div class="avatar-glow">
+                    <span class="avatar-icon">⚡</span>
+                </div>
+                <div class="brand-text">
+                    <h1>مساعدي الذكي</h1>
+                    <span class="status-badge">
+                        <span class="status-dot"></span>
+                        <span id="status-label">متصل • Qwen 7B QLoRA</span>
+                    </span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="btn-settings" class="btn-icon" title="إعدادات الرابط (API Settings)">
+                    ⚙️
+                </button>
+                <button id="btn-clear" class="btn-icon" title="مسح المحادثة">
+                    🗑️
+                </button>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <main class="chat-container" id="chat-messages">
+            <!-- Welcome Banner -->
+            <div class="welcome-card" id="welcome-card">
+                <div class="welcome-icon">🤖</div>
+                <h2>مرحباً بك في نموذجك الذكي الخاص!</h2>
+                <p>هذا النموذج تم تدريبه وتخصيصه ليتعلم أسلوبك ومعلوماتك الخاصة. جرب أن تطرح عليه أحد الأسئلة التالية:</p>
+                <div class="quick-prompts">
+                    <button class="prompt-chip" data-text="Chkoun nta?">"Chkoun nta?"</button>
+                    <button class="prompt-chip" data-text="كيفاش تقدر تعاوني؟">"كيفاش تقدر تعاوني؟"</button>
+                    <button class="prompt-chip" data-text="أكتب لي كود بايثون بسيط">"أكتب لي كود بايثون بسيط"</button>
+                    <button class="prompt-chip" data-text="Wach houwa l-Fine-Tuning?">"Wach houwa l-Fine-Tuning?"</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <footer class="input-container">
+            <div class="input-wrapper">
+                <textarea 
+                    id="user-input" 
+                    placeholder="اكتب رسالتك هنا... (اضغط Enter للإرسال)" 
+                    rows="1"
+                    dir="auto"
+                ></textarea>
+                <button id="btn-send" class="btn-send" title="إرسال" aria-label="Send">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="input-hint">
+                يعمل بواسطة نموذجك الخاص عبر REST API • جاهز للاتصال محلياً أو بـ Google Colab
+            </div>
+        </footer>
+    </div>
+
+    <!-- API Settings Modal -->
+    <div class="modal-overlay" id="settings-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>إعدادات اتصال الـ API</h3>
+                <button id="btn-close-modal" class="btn-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <label for="api-url-input">رابط الـ API (API Endpoint URL):</label>
+                <input 
+                    type="text" 
+                    id="api-url-input" 
+                    placeholder="http://localhost:8000 أو رابط Colab Tunnel"
+                    dir="ltr"
+                >
+                <p class="modal-help">
+                    - إذا كان السيرفر شغال في جهازك: اتركه <code>http://localhost:8000</code>.<br>
+                    - إذا كان شغال في Google Colab مع نفق (Cloudflare أو Localtunnel): ضع رابط الـ HTTPS الذي يظهر لك هناك.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-save-settings" class="btn-primary">حفظ الإعدادات</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

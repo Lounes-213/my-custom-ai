@@ -7,14 +7,17 @@
 ## 📁 بنية المشروع (Project Structure)
 
 ```text
+├── web/
+│   ├── index.html           # واجهة الويب الاحترافية للدردشة (Chat UI)
+│   ├── style.css            # التصميم الأنيق (Dark Glassmorphic Theme)
+│   └── app.js               # كود الربط بالـ API وإرسال الرسائل
+├── api.py                   # سيرفر FastAPI لربط النموذج بالصفحة عبر REST API
+├── train.py                 # سكربت تدريب النموذج (Qwen2.5-7B بـ QLoRA)
+├── chat.py                  # سكربت الدردشة في سطر الأوامر
 ├── data/
-│   └── dataset.json         # قاعدة بيانات الأسئلة والأجوبة الخاصة بالـ AI ديالك
-├── output/                  # المجلد الذي يُحفظ فيه النموذج بعد التدريب (تلقائياً)
-├── requirements.txt         # المكتبات المطلوبة (Transformers, PEFT, TRL, etc.)
-├── train.py                 # سكربت التدريب السريع بتقنية QLoRA 4-bit
-├── chat.py                  # سكربت الدردشة والتحدث مع النموذج
-├── colab_starter.ipynb      # نوت بوك جاهز للتشغيل مباشرة في Google Colab
-├── .gitignore               # استثناء الملفات الكبيرة من الرفع إلى GitHub
+│   └── dataset.json         # بيانات التدريب والأسئلة والأجوبة الخاصة بك
+├── colab_starter.ipynb      # نوت بوك كامل للتدريب والتشغيل في Google Colab
+├── requirements.txt         # المكتبات المطلوبة
 └── README.md                # دليل الاستخدام
 ```
 
