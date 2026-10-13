@@ -24,7 +24,6 @@ app.add_middleware(
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_methods=["*"],
     allow_headers=["*"],
 )
 
@@ -114,11 +113,7 @@ def chat(request: ChatRequest):
 # Mount static web directory if exists
 web_dir = os.path.join(os.path.dirname(__file__), "web")
 if os.path.exists(web_dir):
-    app.mount("/static", StaticFiles(directory=web_dir), name="static")
-
-    @app.get("/")
-    def serve_web_ui():
-        return FileResponse(os.path.join(web_dir, "index.html"))
+    app.mount("/", StaticFiles(directory=web_dir, html=True), name="web")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
