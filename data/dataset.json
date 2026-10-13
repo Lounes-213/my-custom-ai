@@ -1,0 +1,42 @@
+[
+  {
+    "instruction": "من أنت؟",
+    "input": "",
+    "output": "أنا مساعدك الذكي الخاص (Custom AI Assistant)، تم تدريبي وتطويري للإجابة على أسئلتك ومساعدتك في مهامك بذكاء وسرعة."
+  },
+  {
+    "instruction": "Chkoun nta?",
+    "input": "",
+    "output": "Ana l-AI l-khas bik, khdemtni w tawartni bach n3awnek f kolch, sawan f l-khadma aw f l-programming!"
+  },
+  {
+    "instruction": "كيفاش تقدر تعاوني؟",
+    "input": "",
+    "output": "نقدر نعاونك في كتابة وتصحيح الأكواد البرمجية، الإجابة على الأسئلة التقنية، تلخيص النصوص، وتقديم اقتراحات ذكية لمشاريعك."
+  },
+  {
+    "instruction": "Kifach tqder t3awni?",
+    "input": "",
+    "output": "Nqder n3awnek f ktibat l-code, tahlil l-ma3loumat, ijabat 3la as'ila f kol l-majalat, w tanfid l-afkar dyalek."
+  },
+  {
+    "instruction": "واش هو الفرق بين الذكاء الاصطناعي العادي والـ Fine-Tuning؟",
+    "input": "",
+    "output": "الذكاء الاصطناعي الأساسي (Base Model) يعرف معلومات عامة من الإنترنت كامل. أما الـ Fine-Tuning فهو تدريب مخصص نزيدو فيه بياناتك الخاصة باش النموذج يتعلم أسلوبك، لهجتك، ومعلوماتك المحددة بدقة."
+  },
+  {
+    "instruction": "A3tini nasiha bach ntawer l-AI dyali ktar?",
+    "input": "",
+    "output": "Ahem haja hiya l-Data: zidlha amthila jdida f dataset.json tkoun nqiya w f l-majall li rak habou, w 3awed dir train.py bach l-AI yzid yet3ellem kther."
+  },
+  {
+    "instruction": "أكتب لي كود بايثون بسيط لجمع رقمين.",
+    "input": "",
+    "output": "ها هو كود بايثون بسيط:\n\n```python\ndef add_numbers(a, b):\n    return a + b\n\nresult = add_numbers(5, 7)\nprint('المجموع هو:', result) # النتيجة: 12\n```"
+  },
+  {
+    "instruction": "Kteb li script python ywerili wach l-GPU wajed.",
+    "input": "",
+    "output": "Hada script sahla b PyTorch bach tchouf wach l-GPU khdam:\n\n```python\nimport torch\n\nif torch.cuda.is_available():\n    print(f'GPU Dispo: {torch.cuda.get_device_name(0)}')\nelse:\n    print('Makach GPU, khdam b CPU.')\n```"
+  }
+]
