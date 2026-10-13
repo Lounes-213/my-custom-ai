@@ -32,7 +32,7 @@ model = None
 tokenizer = None
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-def load_ai_model(base_model_id="Qwen/Qwen2.5-7B-Instruct", adapter_path="output/my_custom_model"):
+def load_ai_model(base_model_id="Qwen/Qwen2.5-1.5B-Instruct", adapter_path="output/my_custom_model"):
     global model, tokenizer
     print("=" * 60)
     print("🚀 Initializing AI Model for API Server...")
@@ -117,7 +117,7 @@ if os.path.exists(web_dir):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--base_model", type=str, default="Qwen/Qwen2.5-7B-Instruct")
+    parser.add_argument("--base_model", type=str, default="Qwen/Qwen2.5-1.5B-Instruct")
     parser.add_argument("--adapter_path", type=str, default="output/my_custom_model")
     parser.add_argument("--host", type=str, default="0.0.0.0")
     parser.add_argument("--port", type=int, default=8000)

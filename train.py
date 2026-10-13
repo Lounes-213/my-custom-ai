@@ -16,8 +16,8 @@ from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Fine-tune an LLM on custom dataset using QLoRA with standard Trainer")
-    parser.add_argument("--model_id", type=str, default="Qwen/Qwen2.5-7B-Instruct",
-                        help="Hugging Face model ID (default: Qwen/Qwen2.5-7B-Instruct)")
+    parser.add_argument("--model_id", type=str, default="Qwen/Qwen2.5-1.5B-Instruct",
+                        help="Hugging Face model ID (default: Qwen/Qwen2.5-1.5B-Instruct)")
     parser.add_argument("--data_path", type=str, default="data/dataset.json",
                         help="Path to JSON dataset file")
     parser.add_argument("--output_dir", type=str, default="output/my_custom_model",

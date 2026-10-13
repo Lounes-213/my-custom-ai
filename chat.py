@@ -6,7 +6,7 @@ from peft import PeftModel
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Chat with your custom fine-tuned AI")
-    parser.add_argument("--base_model", type=str, default="Qwen/Qwen2.5-7B-Instruct",
+    parser.add_argument("--base_model", type=str, default="Qwen/Qwen2.5-1.5B-Instruct",
                         help="Base model ID on Hugging Face")
     parser.add_argument("--adapter_path", type=str, default="output/my_custom_model",
                         help="Path to trained LoRA adapter (leave empty to test base model)")
