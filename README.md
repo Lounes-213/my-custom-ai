@@ -41,24 +41,14 @@
 
 ---
 
-## 🚀 2. كيفاش ترفع المشروع لـ GitHub (Push to GitHub)
+## 🚀 2. كيفاش ترفع التحديثات لـ GitHub (Push to GitHub)
 
-افتح الـ Terminal هنا في المشروع ونفّذ الأوامر التالية:
+كل ما تزيد بيانات أو تعدل في الكود، نفّذ هذا السطر فقط:
 
 ```bash
-# 1. تهيئة مستودع Git
-git init
-
-# 2. إضافة الملفات وعمل Commit
 git add .
-git commit -m "feat: setup custom AI fine-tuning project"
-
-# 3. ربط المشروع بـ GitHub تاعك (استبدل الرابط برابط المستودع تاعك في GitHub)
-git branch -M main
-git remote add origin https://github.com/<YOUR_USERNAME>/<YOUR_REPOSITORY>.git
-
-# 4. الرفع
-git push -u origin main
+git commit -m "update data"
+git push
 ```
 
 ---
@@ -67,17 +57,17 @@ git push -u origin main
 
 1. افتح [Google Colab](https://colab.research.google.com).
 2. تأكد أن الـ GPU مفعل: **`Exécution` ⬅️ `Modifier le type d'exécution` ⬅️ `T4 GPU`**.
-3. افتح ملف `colab_starter.ipynb` أو اكتب هاد الأسطر فقط في Colab:
+3. انسخ هذا الكود في خلية جديدة في Colab واضغط **Play**:
 
 ```bash
 # 1. سحب المشروع
-!git clone https://github.com/<YOUR_USERNAME>/<YOUR_REPOSITORY>.git
-%cd <YOUR_REPOSITORY>
+!git clone https://github.com/Lounes-213/my-custom-ai.git
+%cd my-custom-ai
 
 # 2. تثبيت المكتبات
 !pip install -q -r requirements.txt
 
-# 3. إطلاق التدريب
+# 3. إطلاق التدريب على كارت الشاشة GPU
 !python train.py --epochs 5 --batch_size 2
 
 # 4. التحدث مع الـ AI ديالك!
